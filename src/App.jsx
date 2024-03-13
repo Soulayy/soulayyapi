@@ -26,7 +26,7 @@ function App() {
 
 
     const [query, setQuery] = useState("")
-    const [region, setRegion] = useState("")
+    const [region, setRegion] = useState("Europe")
     const [pays2, setpays2] = useState(pays)
 
     useEffect(() => {
