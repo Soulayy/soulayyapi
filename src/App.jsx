@@ -26,7 +26,7 @@ function App() {
 
 
     const [query, setQuery] = useState("")
-    const [region, setRegion] = useState("Europe")
+    const [region, setRegion] = useState("")
     const [pays2, setpays2] = useState(pays)
 
     useEffect(() => {
@@ -64,6 +64,8 @@ function App() {
               <option value={"Africa"}>Africa</option>
               <option value={"Europe"}>Europe</option>
               <option value={"Americas"}>Americas</option>
+              <option value={"Asia"}>Asia</option>
+              <option value={"Oceania"}>Oceania</option>
             </select>
         </div>
       </div>
