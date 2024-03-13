@@ -26,7 +26,7 @@ function App() {
 
 
     const [query, setQuery] = useState("")
-    const [region, setRegion] = useState("")
+    const [region, setRegion] = useState("Europe")
     const [pays2, setpays2] = useState(pays)
 
     useEffect(() => {
@@ -35,13 +35,7 @@ function App() {
       setpays2(copie)
     
     }, [query])
-    useEffect(() => {
 
-      const copieRegion = pays.filter(items => items.region.toLowerCase().includes(query.toLowerCase()))
-      setpays2(copieRegion)
-    
-    }, [query])
-    
   
 
   return (
@@ -62,20 +56,21 @@ function App() {
         <div className='flex w-[87%] justify-between'>
           <label className="input input-bordered flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
-              <input onChange={e => setQuery(e.target.value)} type="text" className="grow" placeholder="Search for a country..." />
+              <input onChange={(e) => setQuery(e.target.value)} type="text" className="grow" placeholder="Search for a country..." />
           </label>
 
-            <select className="select select-bordered w-full max-w-xs">
+            <select onChange={(e) => setRegion(e.target.value)} className="select select-bordered w-full max-w-xs">
               <option disabled selected>Filter by Region?</option>
-              <option onClick={e => setRegion(e.target.region)}>Region</option>
-              <option>Greedo</option>
+              <option value={"Africa"}>Africa</option>
+              <option value={"Europe"}>Europe</option>
+              <option value={"Americas"}>Americas</option>
             </select>
         </div>
       </div>
       {
         pays2.map((pays, key) => {
           return(
-            <Link key={key} to={`/soulayyapi/details/${key}`} className='cardy w-[20%] bg-white rounded-xl justify-center items-center'>
+            pays.region == region? <Link key={key} to={`/soulayyapi/details/${key}`} className='cardy w-[20%] bg-white rounded-xl justify-center items-center'>
 
               <div className='h-72 w-full flex flex-col  rounded-xl'>
                 <div className='h-[50%] rounded-t-xl'>
@@ -94,7 +89,7 @@ function App() {
                 </div>
 
               </div>
-            </Link>
+            </Link> : ""
               
           )
         })
