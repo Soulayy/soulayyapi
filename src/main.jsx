@@ -12,11 +12,11 @@ import Details from "./Details";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/soulayyapi/",
     element: <App/>,
   },
   {
-    path: "/details/:id",
+    path: "/soulayyapi/details/:id",
     element: <Details />,
   },
 ]);

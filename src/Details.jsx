@@ -41,7 +41,7 @@ export default function Details() {
         </div>
       </div>
       <div className='w-full h-14 flex justify-start ps-40 items-center p-6'>
-        <Link to={"/"} class="btn-conteiner">
+        <Link to={"/soulayyapi/"} class="btn-conteiner">
           <a class="btn-content" href="#">
             <span class="btn-title">BACK</span>
             <span class="icon-arrow">

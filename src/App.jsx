@@ -75,7 +75,7 @@ function App() {
       {
         pays2.map((pays, key) => {
           return(
-            <Link key={key} to={`/details/${key}`} className='cardy w-[20%] bg-white rounded-xl justify-center items-center'>
+            <Link key={key} to={`/soulayyapi/details/${key}`} className='cardy w-[20%] bg-white rounded-xl justify-center items-center'>
 
               <div className='h-72 w-full flex flex-col  rounded-xl'>
                 <div className='h-[50%] rounded-t-xl'>
